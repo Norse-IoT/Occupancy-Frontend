@@ -5,10 +5,17 @@ let timeout = 0
 async function checkData() {
     let connection = await fetch("user.json");
     data = await connection.json();
-    document.getElementById("sensor-data").innerHTML = data.sensor
-    document.getElementById("count-data").innerHTML = data.count
+    console.log(data)
+    document.getElementById("box-a").innerHTML = `A: ${data.acount}`
+    document.getElementById("box-b").innerHTML = `B: ${data.bcount}`
+    document.getElementById("box-c").innerHTML = `C: ${data.ccount}`
+    document.getElementById("box-d").innerHTML = `D: ${data.dcount}`
+    document.getElementById("box-e").innerHTML = `E: ${data.ecount}`
+    document.getElementById("box-f").innerHTML = `F: ${data.fcount}`
+    document.getElementById("box-g").innerHTML = `G: ${data.gcount}`
+    document.getElementById("box-h").innerHTML = `H: ${data.hcount}`
 }
-checkData()
+//checkData()
 //update warning element
 function changeWarning(text, border, background) {
     if (text == undefined) {
@@ -36,5 +43,5 @@ setInterval(function(){
 
 function refresh() {
     changeWarning("Refreshing data...", "#ffc107", "#5a5a5a",)
-    checkData
+    checkData()
 }
