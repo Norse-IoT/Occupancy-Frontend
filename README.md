@@ -1,5 +1,5 @@
 # Ultrasonic Frontend
-Frontend for the Norse IoT Ultrasonic sensor project.
+Frontend for the Norse IoT Opera Box Occupancy project.
 
 Heavily WIP at the moment.
 
