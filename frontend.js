@@ -1,19 +1,22 @@
 let right = -20
 let i = 4
 let timeout = 0
+let data;
+//YYYY-MM-DD-HH-SS
 
 async function checkData() {
-    let connection = await fetch("user.json");
+    let connection = await fetch("new.json");
     data = await connection.json();
+    data = data[0]
     console.log(data)
-    document.getElementById("box-a").innerHTML = `A: ${data.acount}`
-    document.getElementById("box-b").innerHTML = `B: ${data.bcount}`
-    document.getElementById("box-c").innerHTML = `C: ${data.ccount}`
-    document.getElementById("box-d").innerHTML = `D: ${data.dcount}`
-    document.getElementById("box-e").innerHTML = `E: ${data.ecount}`
-    document.getElementById("box-f").innerHTML = `F: ${data.fcount}`
-    document.getElementById("box-g").innerHTML = `G: ${data.gcount}`
-    document.getElementById("box-h").innerHTML = `H: ${data.hcount}`
+    document.getElementById("box-a").innerHTML = `A: ${data.boxa}`
+    document.getElementById("box-b").innerHTML = `B: ${data.boxb}`
+    document.getElementById("box-c").innerHTML = `C: ${data.boxc}`
+    document.getElementById("box-d").innerHTML = `D: ${data.boxd}`
+    document.getElementById("box-e").innerHTML = `E: ${data.boxe}`
+    document.getElementById("box-f").innerHTML = `F: ${data.boxf}`
+    document.getElementById("box-g").innerHTML = `G: ${data.boxg}`
+    document.getElementById("box-h").innerHTML = `H: ${data.boxh}`
 }
 //checkData()
 //update warning element
