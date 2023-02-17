@@ -1,4 +1,4 @@
-# Ultrasonic Frontend
+# Opera Box Occupancy Frontend
 Frontend for the Norse IoT Opera Box Occupancy project.
 
 Heavily WIP at the moment.
