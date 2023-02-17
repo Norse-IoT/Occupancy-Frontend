@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Norse IoT Occupancy Checker</title>
+</head>
+  
+<body>
+    <table>
+        <tr>
+            <td >Sensor</td>
+            <td id="sensor-data"></td>
+        </tr>
+        <tr>
+            <td>Count</td>
+            <td id="count-data"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    async function checkData() {
+        let connection = await fetch("user.json");
+        data = await connection.json();
+        document.getElementById("sensor-data").innerHTML = data.sensor
+        document.getElementById("count-data").innerHTML = data.count
+    }
+    checkData()
+</script>
+  
+</html>
