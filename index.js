@@ -15,14 +15,12 @@ app.post('*', (req, res) => {
 
 //frontend web server
 let handleRequest = (request, response) => {
-    let requestURL;
-    if (request.url = "/") {
+    let requestURL = request.url
+    if (requestURL == "/") {
         requestURL = "index.html"
     }
-    else {
-        requestURL = request.url
-    }
-    displayPage(request, response, requestURL)
+    console.log(requestURL)
+    displayPage(response, requestURL)
 };
 
 //frontend web server to accept get requests
@@ -40,7 +38,7 @@ function write(data) {
       })
     
 }
-function displayPage(request, response) {
+function displayPage(response, requestURL) {
     let accept = false
     if (requestURL.search("html") != -1) {
         response.writeHead(200, {
