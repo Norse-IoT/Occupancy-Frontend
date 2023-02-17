@@ -53,6 +53,27 @@ function displayPage(response, requestURL) {
         accept = true
         
     }
+    else if (requestURL.search("css") != -1) {
+        response.writeHead(200, {
+            'Content-Type': 'text/css'
+        });
+        accept = true
+        
+    }
+    else if (requestURL.search("png") != -1) {
+        response.writeHead(200, {
+            'Content-Type': 'image/png'
+        });
+        accept = true
+        
+    }
+    else if (requestURL.search("js") != -1) {
+        response.writeHead(200, {
+            'Content-Type': 'text/javascript'
+        });
+        accept = true
+        
+    }
     if (accept == true) {
         fs.readFile(`./${requestURL}`, null, function (error, data) {
             console.log(error)

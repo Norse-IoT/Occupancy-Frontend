@@ -3,28 +3,33 @@
   
 <head>
     <title>Norse IoT Occupancy Checker</title>
+    <link rel="stylesheet" href="/css/web.css">
 </head>
   
 <body>
-    <table>
-        <tr>
-            <td >Sensor</td>
-            <td id="sensor-data"></td>
-        </tr>
-        <tr>
-            <td>Count</td>
-            <td id="count-data"></td>
-        </tr>
-    </table>
+    <header>
+        <img src="https://norse-iot.github.io/Card-Reader/icon.png">
+        <span>Norse IoT Club - Opera Box Occupancy Viewer</span>
+        <div style="margin-left:auto; margin-right: 3%;">
+            <buttton id="refresh" onclick="refresh()">Refresh</button>
+        </div>
+        
+    </header>
+    <main>
+        
+        <table>
+            <tr>
+                <td >Sensor</td>
+                <td id="sensor-data"></td>
+            </tr>
+            <tr>
+                <td>Count</td>
+                <td id="count-data"></td>
+            </tr>
+        </table>
+    </main>
+    <div id="warning" style="border-color: transparent; background-color: transparent;"></div>
+        
 </body>
-<script>
-    async function checkData() {
-        let connection = await fetch("user.json");
-        data = await connection.json();
-        document.getElementById("sensor-data").innerHTML = data.sensor
-        document.getElementById("count-data").innerHTML = data.count
-    }
-    checkData()
-</script>
-  
+<script src="frontend.js"></script>
 </html>
